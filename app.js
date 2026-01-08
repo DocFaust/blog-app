@@ -82,6 +82,10 @@ app.get("/posts/:postId", function (req, res) {
   });
 });
 
-app.listen(port, function () {
-  console.log("Server started on port " + port);
-});
+if (require.main === module) {
+  app.listen(port, function () {
+    console.log("Server started on port " + port);
+  });
+}
+
+module.exports = app;
